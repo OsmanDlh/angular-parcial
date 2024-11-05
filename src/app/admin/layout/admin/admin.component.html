@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="position-sticky pt-3">
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4">Dashboard</span>
+              </a>
+              <hr class="text-white">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a routerLink="/admin/users/lista" class="nav-link" aria-current="page">
+                    <i class="bi bi-house-door me-2"></i>
+                    Inicio
+                  </a>
+                </li>
+             
+                <li>
+                  <a href="#" class="nav-link active">
+                    <i class="bi bi-people me-2"></i>
+                    Usuarios
+                  </a>
+                </li>
+             
+              </ul>
+              <hr class="text-white">
+            </div>
+          </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+            <div id="contenido-variado">
+                <div class="d-flex justify-content-end">
+
+                </div>
+
+
+                <router-outlet></router-outlet>
+
+
+            </div>
+
+        </main>
+    </div>
+</div>

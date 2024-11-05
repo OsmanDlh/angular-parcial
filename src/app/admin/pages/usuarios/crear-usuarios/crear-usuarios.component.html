@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nombre de Usuario:</label>
+    <input [(ngModel)]="usuario.nomusuario" name="nomusuario" required />
+  </div>
+  <div>
+    <label>Contraseña:</label>
+    <input type="password" [(ngModel)]="usuario.contrasena" name="contrasena" required />
+  </div>
+  <div>
+    <label>Nombre:</label>
+    <input [(ngModel)]="usuario.nombre" name="nombre" required />
+  </div>
+  <div>
+    <label>Apellido:</label>
+    <input [(ngModel)]="usuario.apellido" name="apellido" required />
+  </div>
+  <div>
+    <label>Correo:</label>
+    <input type="email" [(ngModel)]="usuario.correo" name="correo" required />
+  </div>
+  <div>
+    <label>Documento:</label>
+    <input [(ngModel)]="usuario.documento" name="documento" required />
+  </div>
+  <div>
+    <label>Fecha de Nacimiento:</label>
+    <input type="date" [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento" required />
+  </div>
+  <div>
+    <label>Teléfono:</label>
+    <input [(ngModel)]="usuario.telefono" name="telefono" required />
+  </div>
+  <div>
+    <label>ID Rol:</label>
+    <input type="number" [(ngModel)]="usuario.idrol" name="idrol" />
+  </div>
+  <div>
+    <label>Estado:</label>
+    <input type="checkbox" [(ngModel)]="usuario.estado" name="estado" />
+  </div>
+  <button type="submit">Crear Usuario</button>
+</form>

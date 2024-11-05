@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center">Iniciar Sesión</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nomusuario" class="form-label">Usuario:</label>
+          <input id="nomusuario" formControlName="nomusuario" type="text" class="form-control" required>
+          <div *ngIf="loginForm.get('nomusuario')?.invalid && loginForm.get('nomusuario')?.touched" class="text-danger">
+            <small *ngIf="loginForm.get('nomusuario')?.errors?.['required']">El nombre de usuario es requerido.</small>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="contrasena" class="form-label">Contraseña:</label>
+          <input id="contrasena" formControlName="contrasena" type="password" class="form-control" required>
+          <div *ngIf="loginForm.get('contrasena')?.invalid && loginForm.get('contrasena')?.touched" class="text-danger">
+            <small *ngIf="loginForm.get('contrasena')?.errors?.['required']">La contraseña es requerida.</small>
+            <small *ngIf="loginForm.get('contrasena')?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres.</small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>

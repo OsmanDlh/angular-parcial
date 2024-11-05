@@ -1,0 +1,46 @@
+<div class="table-responsive">
+    <h1>Gestión de usuarios:</h1>
+    <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-primary btn-sm" [routerLink]="['/admin/users/crear']">
+          AGREGAR USUARIOS
+        </button>
+      </div>
+    
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Documento</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Teléfono</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido }}</td>
+                <td>{{ usuario.correo }}</td>
+                <td>{{ usuario.documento }}</td>
+                <td>{{ usuario.fechaNacimiento }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.estado ? 'Activo' : 'Inactivo' }}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm me-2" [routerLink]="['/admin/users/editar/', usuario.id]">
+                        Editar
+                    </button> 
+                    
+
+                    <button class="btn btn-danger btn-sm" (click)="eliminarUsuario(usuario.id)">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

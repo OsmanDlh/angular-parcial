@@ -1,0 +1,7 @@
+<ng-container *ngIf="iMessageFlash.show">
+  <div class="position-absolute top-0" style="z-index: 9909; width: 100%">
+    <div class="alert" [ngClass]="iMessageFlash.class" role="alert">
+      {{ iMessageFlash.message }}
+    </div>
+  </div>
+</ng-container>
